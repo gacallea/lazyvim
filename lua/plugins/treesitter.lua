@@ -12,7 +12,6 @@ return {
       "gitignore",
       "css",
       "html",
-      "json",
       "yaml",
       "toml",
     },
