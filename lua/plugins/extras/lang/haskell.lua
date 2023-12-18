@@ -1,3 +1,5 @@
+local haskell_ft = { "haskell", "lhaskell", "cabal", "cabalproject" }
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -8,7 +10,7 @@ return {
   {
     "mrcjkb/haskell-tools.nvim",
     version = "^3",
-    ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+    ft = haskell_ft,
     dependencies = {
       { "nvim-telescope/telescope.nvim" },
     },
@@ -57,7 +59,7 @@ return {
   },
   {
     "luc-tielen/telescope_hoogle",
-    ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+    ft = haskell_ft,
     dependencies = {
       { "nvim-telescope/telescope.nvim" },
     },
