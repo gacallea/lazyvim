@@ -2,7 +2,6 @@ return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
-      "bash",
       "diff",
       "comment",
       "regex",
@@ -13,15 +12,9 @@ return {
       "gitignore",
       "css",
       "html",
-      "javascript",
-      "typescript",
-      "tsx",
       "json",
       "yaml",
       "toml",
-      "lua",
-      "luadoc",
-      "luap",
     },
   },
 }
