@@ -7,6 +7,7 @@ return {
   },
   {
     "williamboman/mason.nvim",
+    ft = { "elm" },
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, { "elm-language-server", "elm-format" })
@@ -22,9 +23,10 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    ft = { "elm" },
     opts = {
       servers = {
-        elm_ls = {},
+        elmls = {},
       },
     },
   },
