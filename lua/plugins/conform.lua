@@ -5,11 +5,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       sh = { "shfmt" },
-      python = { "black" },
-      markdown = { "markdownlint" },
       javascript = { "standardjs" },
-      swift = { "swiftformat" },
-      elm = { "elm_format" },
     },
     -- The options you set here will be merged with the builtin formatters.
     -- You can also define any custom formatters here.

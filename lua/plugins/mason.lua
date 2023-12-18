@@ -2,15 +2,15 @@ return {
   "williamboman/mason.nvim",
   opts = {
     ensure_installed = {
+      -- lua
       "stylua",
       "luacheck",
+      -- shell
       "shfmt",
       "shellcheck",
-      "black",
-      "flake8",
-      "elm-format",
-      "markdownlint",
+      -- javascript
       "standardjs",
+      -- typescript
       "ts-standard",
     },
   },

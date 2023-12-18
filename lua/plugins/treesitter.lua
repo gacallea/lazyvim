@@ -2,9 +2,6 @@ return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
-      "elm",
-      "haskell",
-      "swift",
       "bash",
       "diff",
       "comment",
@@ -22,12 +19,9 @@ return {
       "json",
       "yaml",
       "toml",
-      "markdown",
-      "markdown_inline",
       "lua",
       "luadoc",
       "luap",
-      "python",
     },
   },
 }

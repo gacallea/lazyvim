@@ -4,9 +4,7 @@ return {
     linters_by_ft = {
       lua = { "luacheck" },
       sh = { "shellcheck" },
-      python = { "flake8" },
-      markdown = { "markdownlint" },
-      swift = { "swiftlint" },
+      javascript = { "standardjs" },
     },
     -- LazyVim extension to easily override linter options
     -- or add custom linters.
