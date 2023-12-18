@@ -23,6 +23,7 @@ require("lazy").setup {
     -- import/override with your plugins
     { import = "plugins" },
     { import = "plugins.extras.lang" },
+    { import = "plugins.extras.git" },
     { import = "plugins.extras.ui" },
   },
   defaults = {
