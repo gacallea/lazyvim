@@ -1,3 +1,11 @@
+-- local pattern = "[^:]+:(%d+):(%d+): (%w+): (.+)"
+-- local groups = { "lnum", "col", "severity", "message" }
+-- local defaults = { ["source"] = "swiftlint" }
+-- local severity_map = {
+--   ["error"] = vim.diagnostic.severity.ERROR,
+--   ["warning"] = vim.diagnostic.severity.WARN,
+-- }
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -23,6 +31,22 @@ return {
   {
     "mfussenegger/nvim-lint",
     opts = {
+      linters = {
+        swiftlint = {
+          cmd = "swiftlint",
+          -- stdin = true,
+          -- args = {
+          --  "lint",
+          --   "--use-stdin",
+          -- "--config",
+          --  function() return ".swiftlint.yml" or os.getenv "HOME" .. "/.config/nvim/.swiftlint.yml" end,
+          --   "-",
+          --  },
+          -- stream = "stdout",
+          -- ignore_exitcode = true,
+          -- parser = require("lint.parser").from_pattern(pattern, groups, severity_map, defaults),
+        },
+      },
       linters_by_ft = {
         swift = { "swiftlint" },
       },
