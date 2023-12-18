@@ -13,6 +13,7 @@ require("lazy").setup {
 
     -- languages
     { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.yaml" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
 
     -- ui/ux

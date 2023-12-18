@@ -10,8 +10,6 @@ return {
       "gitattributes",
       "gitcommit",
       "gitignore",
-      "yaml",
-      "toml",
     },
   },
 }
