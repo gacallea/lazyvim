@@ -23,6 +23,7 @@ require("lazy").setup {
 
     -- ide
     { import = "lazyvim.plugins.extras.editor.symbols-outline" },
+    { import = "lazyvim.plugins.extras.test.core" },
     { import = "lazyvim.plugins.extras.dap.core" },
 
     -- import/override with your plugins
