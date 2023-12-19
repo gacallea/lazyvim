@@ -1,11 +1,14 @@
 -- only zk here, for markdown see lang.markdown
+-- this plugin will setup and start the LSP server for you
 
 return {
   {
     "mickael-menu/zk-nvim",
-    opts = {
-      picker = "telescope",
-    },
+    config = function()
+      require("zk").setup {
+        picker = "telescope",
+      }
+    end,
   },
   {
     "williamboman/mason.nvim",
@@ -13,13 +16,5 @@ return {
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, { "zk" })
     end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        zk = {},
-      },
-    },
   },
 }
