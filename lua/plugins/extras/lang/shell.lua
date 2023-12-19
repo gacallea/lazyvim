@@ -30,7 +30,6 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    ft = { "swift" },
     opts = {
       servers = {
         bashls = {},

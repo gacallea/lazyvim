@@ -22,7 +22,6 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    ft = { "elm" },
     opts = {
       servers = {
         taplo = {},
