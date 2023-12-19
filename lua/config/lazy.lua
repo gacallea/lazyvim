@@ -24,6 +24,7 @@ require("lazy").setup {
     { import = "plugins" },
     { import = "plugins.extras.lang" },
     { import = "plugins.extras.git" },
+    { import = "plugins.extras.writing" },
     { import = "plugins.extras.ui" },
   },
   defaults = {
