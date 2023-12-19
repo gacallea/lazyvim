@@ -89,6 +89,14 @@ return {
     },
   },
   {
+    "folke/which-key.nvim",
+    opts = {
+      defaults = {
+        ["<leader>X"] = { name = "+xcodebuild" },
+      },
+    },
+  },
+  {
     "wojciech-kulik/xcodebuild.nvim",
     dependencies = {
       "nvim-telescope/telescope.nvim",
