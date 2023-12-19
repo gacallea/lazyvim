@@ -2,9 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "css", "html", "javascript" })
-      end
+      if type(opts.ensure_installed) == "table" then vim.list_extend(opts.ensure_installed, { "css" }) end
     end,
   },
   {
@@ -12,14 +10,14 @@ return {
     ft = { "elm" },
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "css-lsp", "emmet-ls", "standardjs" })
+      vim.list_extend(opts.ensure_installed, { "css-lsp" })
     end,
   },
   {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        javascript = { "standardjs" },
+        css = { "stylelint" },
       },
     },
   },
@@ -27,7 +25,15 @@ return {
     "mfussenegger/nvim-lint",
     opts = {
       linters_by_ft = {
-        javascript = { "standardjs" },
+        css = { "stylelint" },
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        cssls = {},
       },
     },
   },
