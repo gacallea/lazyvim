@@ -1,5 +1,4 @@
 local util = require "lspconfig.util"
-
 local pattern = "[^:]+:(%d+):(%d+): (%w+): (.+)"
 local groups = { "lnum", "col", "severity", "message" }
 local defaults = { ["source"] = "swiftlint" }
