@@ -1,9 +1,7 @@
+-- ~/.config/luacheck/.luacheckrc
 -- Global objects
 globals = {
-  "astronvim",
-  "astronvim_installation",
   "vim",
-  "bit",
 }
 
 -- Rerun tests only if their modification time changed
@@ -13,6 +11,5 @@ cache = true
 self = false
 
 ignore = {
-  "631", -- max_line_length
   "212/_.*", -- unused argument, for vars with "_" prefix
 }
