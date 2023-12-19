@@ -19,8 +19,11 @@ require("lazy").setup {
 
     -- ui/ux
     { import = "lazyvim.plugins.extras.ui.edgy" },
-    { import = "lazyvim.plugins.extras.editor.symbols-outline" },
     { import = "lazyvim.plugins.extras.util.project" },
+
+    -- ide
+    { import = "lazyvim.plugins.extras.editor.symbols-outline" },
+    { import = "lazyvim.plugins.extras.dap.core" },
 
     -- import/override with your plugins
     { import = "plugins" },
