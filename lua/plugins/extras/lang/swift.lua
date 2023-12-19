@@ -1,10 +1,12 @@
--- local pattern = "[^:]+:(%d+):(%d+): (%w+): (.+)"
--- local groups = { "lnum", "col", "severity", "message" }
--- local defaults = { ["source"] = "swiftlint" }
--- local severity_map = {
---   ["error"] = vim.diagnostic.severity.ERROR,
---   ["warning"] = vim.diagnostic.severity.WARN,
--- }
+local util = require "lspconfig.util"
+
+local pattern = "[^:]+:(%d+):(%d+): (%w+): (.+)"
+local groups = { "lnum", "col", "severity", "message" }
+local defaults = { ["source"] = "swiftlint" }
+local severity_map = {
+  ["error"] = vim.diagnostic.severity.ERROR,
+  ["warning"] = vim.diagnostic.severity.WARN,
+}
 
 return {
   {
@@ -34,17 +36,17 @@ return {
       linters = {
         swiftlint = {
           cmd = "swiftlint",
-          -- stdin = true,
-          -- args = {
-          --  "lint",
-          --   "--use-stdin",
-          -- "--config",
-          --  function() return ".swiftlint.yml" or os.getenv "HOME" .. "/.config/nvim/.swiftlint.yml" end,
-          --   "-",
-          --  },
-          -- stream = "stdout",
-          -- ignore_exitcode = true,
-          -- parser = require("lint.parser").from_pattern(pattern, groups, severity_map, defaults),
+          stdin = true,
+          args = {
+            "lint",
+            "--use-stdin",
+            -- "--config",
+            --  function() return ".swiftlint.yml" or os.getenv "HOME" .. "/.config/nvim/.swiftlint.yml" end,
+            --   "-",
+          },
+          stream = "stdout",
+          ignore_exitcode = true,
+          parser = require("lint.parser").from_pattern(pattern, groups, severity_map, defaults),
         },
       },
       linters_by_ft = {
@@ -54,10 +56,19 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    ft = { "swift" },
     opts = {
       servers = {
-        sourcekit = {},
+        sourcekit = {
+          cmd = { "sourcekit-lsp" },
+          filetypes = { "swift", "objective-c", "objective-cpp" },
+          -- root_dir = util.root_pattern("Package.swift", "buildServer.json", "compile_commands.json", ".git"),
+          root_dir = function(filename, _)
+            return util.root_pattern "buildServer.json"(filename)
+              or util.root_pattern("*.xcodeproj", "*.xcworkspace")(filename)
+              or util.find_git_ancestor(filename)
+              or util.root_pattern "Package.swift"(filename)
+          end,
+        },
       },
     },
   },
