@@ -17,6 +17,7 @@ require("lazy").setup {
     { import = "lazyvim.plugins.extras.lang.tailwind" },
 
     -- ui/ux
+    { import = "lazyvim.plugins.extras.ui.edgy" },
     { import = "lazyvim.plugins.extras.editor.symbols-outline" },
     { import = "lazyvim.plugins.extras.util.project" },
 
