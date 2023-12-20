@@ -30,6 +30,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    ft = { "sh", "bash", "zsh" },
     opts = {
       servers = {
         bashls = {},

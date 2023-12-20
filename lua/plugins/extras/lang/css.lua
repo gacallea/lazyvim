@@ -30,6 +30,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    ft = { "css", "less", "sass" },
     opts = {
       servers = {
         cssls = {},

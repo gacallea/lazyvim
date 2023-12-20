@@ -22,6 +22,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    ft = { "toml" },
     opts = {
       servers = {
         taplo = {},

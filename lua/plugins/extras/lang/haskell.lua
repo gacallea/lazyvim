@@ -40,6 +40,7 @@ return {
   },
   {
     "nvim-neotest/neotest",
+    ft = haskell_ft,
     dependencies = {
       { "mrcjkb/neotest-haskell" },
     },
@@ -51,6 +52,7 @@ return {
   },
   {
     "mrcjkb/haskell-snippets.nvim",
+    ft = haskell_ft,
     dependencies = { "L3MON4D3/LuaSnip" },
     config = function()
       local haskell_snippets = require("haskell-snippets").all
@@ -72,6 +74,7 @@ return {
   -- as it conflicts with haskell-tools
   {
     "neovim/nvim-lspconfig",
+    ft = haskell_ft,
     opts = {
       setup = {
         hls = function() return true end,

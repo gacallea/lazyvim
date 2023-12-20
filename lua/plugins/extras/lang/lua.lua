@@ -32,6 +32,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    ft = { "lua", "luadoc", "luap" },
     opts = {
       servers = {
         lua_ls = {},

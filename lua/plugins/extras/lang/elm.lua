@@ -22,6 +22,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    ft = { "elm" },
     opts = {
       servers = {
         elmls = {},

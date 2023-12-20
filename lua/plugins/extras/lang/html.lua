@@ -30,6 +30,7 @@ return {
   -- },
   {
     "neovim/nvim-lspconfig",
+    ft = { "html" },
     opts = {
       servers = {
         emmet_ls = {
