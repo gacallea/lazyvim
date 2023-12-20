@@ -4,3 +4,6 @@ name = "vim"
 
 [vim]
 any = true
+
+[lints]
+mixed_table = "allow"
