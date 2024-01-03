@@ -1,0 +1,3 @@
+return {
+  { "NicholasDunham/chuck.nvim" },
+}
