@@ -3,21 +3,13 @@ local function get_cur_file_extension(bufnr)
   return "." .. vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":e")
 end
 
+-- markdown deps in markdown lang plugin
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "markdown", "markdown_inline", "latex" })
-      end
-    end,
-  },
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      -- vim.list_extend(opts.ensure_installed, { "ltex-ls", "alex", "write-good", "vale" })
-      vim.list_extend(opts.ensure_installed, { "ltex-ls", "vale" })
+      vim.list_extend(opts.ensure_installed, { "vale" })
     end,
   },
   {
@@ -40,16 +32,6 @@ return {
             "--ext",
             get_cur_file_extension,
           },
-        },
-      },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        ltex = {
-          language = "en-US",
         },
       },
     },
