@@ -17,4 +17,14 @@ return {
       vim.list_extend(opts.ensure_installed, { "zk" })
     end,
   },
+  -- Make sure lspconfig doesn't start zk,
+  -- as it conflicts with zk-nvim
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      setup = {
+        zk = function() return true end,
+      },
+    },
+  },
 }
