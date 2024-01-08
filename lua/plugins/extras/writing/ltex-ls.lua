@@ -14,16 +14,31 @@ return {
       servers = {
         ltex = {
           cmd = { "/usr/local/bin/ltex-ls" }, -- install ltex-ls with brew install ltex-ls
-          filetypes = { "gitcommit", "markdown", "tex", "pandoc", "rmd" },
           root_dir = function(filename) return util.path.dirname(filename) end,
         },
       },
-      settings = {
+      settings = { -- https://valentjn.github.io/ltex/settings.html
         ltex = {
-          enabled = { "latex", "tex", "bib", "markdown" },
-          language = "auto",
-          diagnosticSeverity = "information",
+          enabled = {
+            "latex",
+            "markdown",
+            "org",
+            "restructuredtext",
+          },
+          language = "en-US",
+          diagnosticSeverity = "information", --  The possible severities are "error", "warning", "information", and "hint".
           sentenceCacheSize = 2000,
+          completionEnabled = false,
+          additionalRules = {
+            enablePickyRules = false,
+            motherTongue = "it",
+          },
+          checkFrequency = "save",
+          -- language-specific settings:
+          dictionary = {}, -- Lists of additional words that should not be counted as spelling errors.
+          disabledRules = {}, -- Lists of rules that should be disabled (if enabled by default by LanguageTool).
+          enabledRules = {}, -- Lists of rules that should be enabled (if disabled by default by LanguageTool).
+          hiddenFalsePositives = {}, -- Lists of false-positive diagnostics to hide (by hiding all diagnostics of a specific rule within a specific sentence).
         },
       },
     },
