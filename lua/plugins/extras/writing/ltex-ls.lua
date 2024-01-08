@@ -1,3 +1,5 @@
+local util = require "lspconfig/util"
+
 -- markdown deps in markdown lang plugin
 return {
   {
@@ -7,30 +9,21 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "ltex-ls" })
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
         ltex = {
-          cmd = { "ltex-ls" },
+          cmd = { "/usr/local/bin/ltex-ls" }, -- install ltex-ls with brew install ltex-ls
+          filetypes = { "gitcommit", "markdown", "tex", "pandoc", "rmd" },
+          root_dir = function(filename) return util.path.dirname(filename) end,
+        },
+      },
+      settings = {
+        ltex = {
           enabled = { "latex", "tex", "bib", "markdown" },
-          -- checkFrequency = "edit",
-          language = "en-US",
+          language = "auto",
           diagnosticSeverity = "information",
-          setenceCacheSize = 2000,
-          -- additionalRules = {
-          --   enablePickyRules = true,
-          --   motherTongue = "en-US",
-          -- },
-          dictionary = {},
-          disabledRules = {},
-          hiddenFalsePositives = {},
+          sentenceCacheSize = 2000,
         },
       },
     },
