@@ -48,9 +48,10 @@ return {
     },
     right = {
       {
-        ft = "Outline",
+        title = "Aerial",
+        ft = "aerial",
         pinned = true,
-        open = "SymbolsOutlineOpen",
+        open = "AerialOpen",
       },
     },
     keys = {
