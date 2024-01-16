@@ -4,6 +4,9 @@ return {
     animate = {
       enabled = false,
     },
+    wo = {
+      winbar = false,
+    },
     bottom = {
       {
         ft = "noice",
