@@ -7,6 +7,7 @@ return {
     wo = {
       winbar = false,
     },
+    exit_when_last = true,
     bottom = {
       {
         ft = "noice",
