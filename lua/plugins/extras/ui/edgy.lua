@@ -1,8 +1,5 @@
 return {
   "folke/edgy.nvim",
-  keys = {
-    { "<F12>", function() require("edgy").toggle() end, desc = "Edgy Toggle" },
-  },
   opts = {
     animate = {
       enabled = false,
