@@ -13,7 +13,7 @@ return {
     name = "chuck-nvim",
     dependencies = {
       { "MunifTanjim/nui.nvim" },
-      {
+      { -- until https://github.com/gacallea/chuck-nvim/issues/3
         "nvim-tree/nvim-web-devicons",
         opts = {
           override_by_extension = {
@@ -27,6 +27,10 @@ return {
       },
     },
     ft = { "chuck" },
+    opts = {
+      autorun = true,
+      srate = 48000,
+    },
     cmd = {
       "ChuckLoop",
       "ChuckStatus",
@@ -48,9 +52,6 @@ return {
       { mode = "n", "<leader>Cc", "<cmd>ChuckClearShreds<cr>", desc = "Clear Shreds" },
       { mode = "n", "<leader>Cv", "<cmd>ChuckClearVM<cr>", desc = "Clear VM" },
       { mode = "n", "<leader>Ce", "<cmd>ChuckExit<cr>", desc = "Exit ChucK" },
-    },
-    opts = {
-      srate = 48000,
     },
   },
 }
