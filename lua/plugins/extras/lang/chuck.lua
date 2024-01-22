@@ -29,6 +29,7 @@ return {
     ft = { "chuck" },
     opts = {
       autorun = true,
+      log_level = 2,
       srate = 48000,
     },
     cmd = {
