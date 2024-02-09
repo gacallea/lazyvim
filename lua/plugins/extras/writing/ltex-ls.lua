@@ -13,7 +13,7 @@ return {
     opts = {
       servers = {
         ltex = {
-          cmd = { "/usr/local/bin/ltex-ls" }, -- install ltex-ls with brew install ltex-ls
+          cmd = { "/opt/homebrew/bin/ltex-ls" }, -- install ltex-ls with brew install ltex-ls
           root_dir = function(filename) return util.path.dirname(filename) end,
         },
       },
